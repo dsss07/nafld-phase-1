@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Doctor Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
 
   <style>
     body {
@@ -93,7 +93,7 @@
 <body>
 
   <div class="card">
-    <h2 id="form-title">Welcome Doctor</h2>
+    <h2 id="form-title">Welcome Doctorssss</h2>
     <p id="form-subtitle">Login to continue</p>
 
     <form id="login-form">
@@ -119,8 +119,8 @@
     </form>
   </div>
 
-  <script type="module" src="js/firebase.js"></script>
-  <script type="module" src="js/login.js"></script>
+  <script type="module" src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='js/login.js') }}"></script>
 
 </body>
 </html>

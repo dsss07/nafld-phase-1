@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NAFLD - Phase 1 - Initial Assessment</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <style>
     .form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;}
     .field{display:flex;flex-direction:column;margin-bottom:8px;}
@@ -47,7 +47,7 @@
     </div>
   </main>
 
-  <script src="components/header.html" type="text/html" id="header-template"></script>
-  <script type="module" src="js/phase1.js"></script>
+  <!-- <script src="components/header.html" type="text/html" id="header-template"></script> -->
+  <script type="module" src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>

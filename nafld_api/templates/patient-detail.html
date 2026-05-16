@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <title>Patient Details</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <style>
     /* HEADER SAME AS DASHBOARD */
 .site-header {
@@ -121,7 +121,7 @@
   </div>
 
   <!-- load firebase first, then this page script -->
-  <script type="module" src="js/firebase.js"></script>
-  <script type="module" src="js/patient-detail.js"></script>
+  <script type="module" src="{{ url_for('static', filename='js/firebase.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='js/patient-detail.js') }}"></script>
 </body>
 </html>

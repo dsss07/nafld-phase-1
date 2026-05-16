@@ -56,7 +56,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
     try {
       const cred = await signInWithEmailAndPassword(auth, email, password);
       localStorage.setItem("doctorID", cred.user.uid);
-      window.location.href = "dashboard.html";
+      window.location.href = "/dashboard";
     } catch (err) {
       alert("Login Error: " + err.message);
     }

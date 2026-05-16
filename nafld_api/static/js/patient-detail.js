@@ -37,7 +37,7 @@ function setupHeaderActions() {
     const { signOut } = await import("https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js");
     await signOut(auth);
     localStorage.removeItem("doctorID");
-    window.location.href = "login.html";
+    window.location.href = "/";
   };
 }
 
@@ -90,11 +90,9 @@ function loadReportsRealtime() {
       const id = docSnap.id;
 
       let button = "";
-      /*if (first) {
-        button = !r.nafldResult
-          ? `<button class="btn-add run-btn" data-id="${id}">Run Analysis</button>`
-          : `<a class="btn-add" href="phase2.html?patientId=${pid}&reportId=${id}">Go to Phase 2</a>`;
-      }*/
+      if (first) {
+  button = `<button class="btn-add run-btn" data-id="${id}">Run Analysis Phase 1</button>`;
+}
 
       box.innerHTML += `
         <div class="report-card">

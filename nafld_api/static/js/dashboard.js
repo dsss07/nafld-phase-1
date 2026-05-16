@@ -11,7 +11,7 @@ const auth = window.firebaseAuth;
 function getUID() {
   const uid = localStorage.getItem("doctorID");
   if (!uid) {
-    window.location.href = "login.html";
+    window.location.href = "/";
     return null;
   }
   return uid;
@@ -53,7 +53,7 @@ function setupHeader() {
     await signOut(auth);
 
     localStorage.removeItem("doctorID");
-    window.location.href = "login.html";
+    window.location.href = "/";
   };
 }
 
@@ -61,7 +61,7 @@ function setupHeader() {
 // OPEN PATIENT DETAILS PAGE
 // ----------------------------------------------
 window.openPatient = function (id) {
-  window.location.href = `patient-detail.html?id=${id}`;
+  window.location.href = `/patient-detail?id=${id}`;
 };
 
 // ----------------------------------------------

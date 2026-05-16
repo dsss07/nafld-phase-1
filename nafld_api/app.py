@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 import joblib
 import numpy as np
 from flask_cors import CORS
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -11,8 +12,24 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 # Load model + scaler
-model = joblib.load("nafld_model.pkl")
-scaler = joblib.load("scaler.pkl")
+model = joblib.load("nafld_api/nafld_model.pkl")
+scaler = joblib.load("nafld_api/scaler.pkl")
+
+@app.route("/")
+def home():
+    return render_template("login.html")
+
+@app.route("/dashboard")
+def dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/phase1")
+def phase1():
+    return render_template("phase1.html")
+
+@app.route("/patient-detail")
+def patient_detail():
+    return render_template("patient-detail.html")
 
 @app.route("/predict_phase1", methods=["POST", "GET", "OPTIONS"])
 def predict_phase1():
